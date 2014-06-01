@@ -8,8 +8,8 @@ class PistachoAPI(object):
     def __init__(self):
         pass
 
-    def postData(self, data):
-        url = 'http://plantigoshi.herokuapp.com/'
+    def postData(self, data, pin):
+        url = 'http://plantigoshi.herokuapp.com/plant/' + pin + '/sync' 
         request = urllib2.Request(url)
         request.add_header('Content-Type', 'application/json')
         result = urllib2.urlopen(request, json.dumps(data))
