@@ -66,7 +66,7 @@ void setColor(uint8_t r,uint8_t g,uint8_t b)
 void measurement()
 {
 	moisture = map(analogRead(A0),0,900,0,100);
-	rain = digitalRead(rain_sen);
+	rain = !digitalRead(rain_sen);
 	solar_volt = analogRead(A1)*(5.0/1023);
 	light = (analogRead(A2)>800);
 	temp = random(24,27);//(5.0 * analogRead(A3) * 100.0) / 1024;	
