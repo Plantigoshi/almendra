@@ -8,9 +8,8 @@ class PistachoAPI(object):
     def __init__(self):
         pass
 
-    def postData(self, username, password):
+    def postData(self, data):
         url = ''
-        data = {}
         request = urllib2.Request(url)
         request.add_header('Content-Type', 'application/json')
         result = urllib2.urlopen(request, json.dumps(data))
