@@ -7,7 +7,16 @@ if __name__ == '__main__':
     pistacho = pistachoAPI()
 
     while(True):
-	frame = almendra.getFrame()
-	pistacho.postData(frame)
+        frame = almendra.getFrame()
+        pistacho.postData(frame)
 
-	time.sleep(60)
+        try:
+            flags = pistacho.getFlags()
+	    if flags['Riego']:
+		almendra.water()
+	    if flags['TempCont']:
+                almendra.tempCon()			    
+        except:
+	    raise Exception('Invalid Frame.')           	
+
+        time.sleep(60 * 3)

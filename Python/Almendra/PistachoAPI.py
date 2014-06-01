@@ -9,7 +9,7 @@ class PistachoAPI(object):
         pass
 
     def postData(self, data):
-        url = ''
+        url = 'http://plantigoshi.herokuapp.com/'
         request = urllib2.Request(url)
         request.add_header('Content-Type', 'application/json')
         result = urllib2.urlopen(request, json.dumps(data))
@@ -17,9 +17,9 @@ class PistachoAPI(object):
         return result.read()
 
     def getData(self):
-        url = ''
+        url = 'http://plantigoshi.herokuapp.com/'
         return urllib2.urlopen(url).read()
 
     def getFlags(self):
-        url = ''
+        url = 'http://plantigoshi.herokuapp.com/'
         return urllib2.urlopen(url).read()
