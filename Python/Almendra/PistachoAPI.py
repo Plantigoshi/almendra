@@ -12,7 +12,7 @@ class PistachoAPI(object):
         url = 'http://plantigoshi.herokuapp.com/plant/' + pin + '/sync' 
         request = urllib2.Request(url)
         request.add_header('Content-Type', 'application/json')
-        result = urllib2.urlopen(request, json.dumps(data))
+        result = urllib2.urlopen(request, json.dumps({'data' : data}))
 
         return result.read()
 
