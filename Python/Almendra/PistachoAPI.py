@@ -27,5 +27,5 @@ class PistachoAPI(object):
         return urllib2.urlopen(url).read() 
 
     def temperatureFlag(self, plant):
-        url = self.host + 'temp/' + str(plant) + '/synct_temp'
+        url = self.host + 'plants/' + str(plant) + '/sync_heat'
 	return urllib2.urlopen(url).read()
