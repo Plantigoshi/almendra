@@ -1,3 +1,4 @@
+import json 
 from serial import Serial
 
 
@@ -8,10 +9,10 @@ class AlmendraAPI(object):
 
     def getFrame(self):
         self.serial.write('G')
-        return self.serial.readline()
+        return json.loads(self.serial.readline())
 
     def water(self):
-        self.serial.write('R')
+        self.serial.write('T')
 
     def tempCont(self):
-        self.serial.write('T')
+        self.serial.write('R')
