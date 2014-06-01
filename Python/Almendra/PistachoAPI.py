@@ -12,8 +12,9 @@ class PistachoAPI(object):
             self.host = 'http://plantigoshi.herokuapp.com/' 
 
     def postData(self, data, plant):
+	#print data
+	data['Status'] = ((data['Hum'] < 70)  and (data ['Hum'] > 50))
 	print data
-	data['Status'] = ((data['Hum'] < 70 or data ['Hum'] > 50))
         url = self.host + 'plants/' + str(plant) + '/sync' 
         request = urllib2.Request(url)
         request.add_header('Content-Type', 'application/json')

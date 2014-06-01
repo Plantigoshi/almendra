@@ -13,4 +13,4 @@ if __name__ == '__main__':
 	if pistacho.wateringFlag(1) == 'true':
 	    almendra.water()      
      	
-        time.sleep(10)
+        time.sleep(1)
