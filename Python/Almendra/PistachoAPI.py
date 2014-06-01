@@ -22,14 +22,10 @@ class PistachoAPI(object):
 
         return result.read()
 
-    def getData(self):
-        url = self.host
-        return urllib2.urlopen(url).read()
-
-    def getFlags(self):
-        url = self.host
-        return urllib2.urlopen(url).read()
-
     def wateringFlag(self, plant):
         url = self.host + 'plants/' + str(plant) + '/sync_water'
         return urllib2.urlopen(url).read() 
+
+    def temperatureFlag(self, plant):
+        url = self.host + 'temp/' + str(plant) + '/synct_temp'
+	return urllib2.urlopen(url).read()
