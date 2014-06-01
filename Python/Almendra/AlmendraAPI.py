@@ -8,7 +8,7 @@ class AlmendraAPI(object):
 
     def getFrame(self):
         self.serial.write('G')
-        return self.serial.readLine()
+        return self.serial.readline()
 
     def water(self):
         self.serial.write('R')
