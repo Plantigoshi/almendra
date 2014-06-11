@@ -52,7 +52,7 @@ void loop()
 	if(rand_color && (micros() - timer > 5000000))
 	{
 		timer = micros();
-		setColor(0xFF,0xFF,0);
+		setColor(255,255,0);
 	}
 }
 
